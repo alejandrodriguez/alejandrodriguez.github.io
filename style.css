@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Palanquin", sans-serif;
+}
+
+.name-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #171717, #111a27);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-wrapper * {
+    color: white;
+    text-shadow: 4px 4px 4px black;
+}
+
+.name-wrapper > h1 {
+    font-size: 96px;
+    text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb, 0 0 40px #4f7cbb,
+        0 0 80px #4f7cbb, 0 0 120px #4f7cbb;
+    animation: lightup 5s 1;
+}
+
+@keyframes lightup {
+    0% {
+        color: #243651;
+        text-shadow: none;
+    }
+    10% {
+        color: #243651;
+        text-shadow: none;
+    }
+    11% {
+        color: white;
+        text-shadow: 0 0 10px #4f7cbb;
+    }
+    13% {
+        color: #243651;
+        text-shadow: none;
+    }
+    18% {
+        color: white;
+        text-shadow: 0 0 10px #4f7cbb;
+    }
+    27% {
+        color: #243651;
+        text-shadow: none;
+    }
+    28% {
+        color: white;
+        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb;
+    }
+    29% {
+        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb 0 0 40px #4f7cbb;
+    }
+    30% {
+        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb, 0 0 40px #4f7cbb,
+            0 0 80px #4f7cbb;
+    }
+    31% {
+        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb, 0 0 40px #4f7cbb,
+            0 0 80px #4f7cbb, 0 0 120px #4f7cbb, 0 0 240px;
+    }
+}
+
+.name-wrapper > h2 {
+    font-size: 48px;
+}
