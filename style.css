@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
 
 * {
     margin: 0;
@@ -8,72 +10,177 @@
 
 body {
     font-family: "Palanquin", sans-serif;
+    background: radial-gradient(#111a27, #06090e);
+    color: white;
 }
 
 .name-wrapper {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, #171717, #111a27);
+    /* background: linear-gradient(to bottom, black, #111a27); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.name-wrapper * {
-    color: white;
-    text-shadow: 4px 4px 4px black;
-}
-
 .name-wrapper > h1 {
-    font-size: 96px;
-    text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb, 0 0 40px #4f7cbb,
-        0 0 80px #4f7cbb, 0 0 120px #4f7cbb;
-    animation: lightup 5s 1;
+    font-size: 108px;
 }
 
 @keyframes lightup {
     0% {
         color: #243651;
         text-shadow: none;
+        border-color: #243651;
+        box-shadow: none;
     }
     10% {
         color: #243651;
         text-shadow: none;
+        border-color: #243651;
+        box-shadow: none;
     }
     11% {
         color: white;
-        text-shadow: 0 0 10px #4f7cbb;
+        text-shadow: 0 0 10px white;
+        border-color: white;
+        box-shadow: 0 0 5px white;
     }
     13% {
         color: #243651;
         text-shadow: none;
+        border-color: #243651;
+        box-shadow: none;
     }
     18% {
         color: white;
-        text-shadow: 0 0 10px #4f7cbb;
+        text-shadow: 0 0 10px white;
+        border-color: white;
+        box-shadow: 0 0 5px white;
     }
     27% {
         color: #243651;
         text-shadow: none;
+        border-color: #243651;
+        box-shadow: none;
     }
     28% {
         color: white;
-        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb;
+        text-shadow: 0 0 10px white, 0 0 20px #0084ff;
+        border-color: white;
+        box-shadow: 0 0 5px white;
     }
     29% {
-        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb 0 0 40px #4f7cbb;
+        text-shadow: 0 0 10px white, 0 0 20px #0084ff 0 0 40px #0084ff;
+        box-shadow: 0 0 5px white, 0 0 15px #0084ff;
     }
     30% {
-        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb, 0 0 40px #4f7cbb,
-            0 0 80px #4f7cbb;
+        text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
+            0 0 80px #0084ff;
+        box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff;
     }
     31% {
-        text-shadow: 0 0 10px #4f7cbb, 0 0 20px #4f7cbb, 0 0 40px #4f7cbb,
-            0 0 80px #4f7cbb, 0 0 120px #4f7cbb, 0 0 240px;
+        text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
+            0 0 80px #009dff, 0 0 160px #0084ff;
+        box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff;
+    }
+    100% {
+        text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
+            0 0 80px #0084ff;
+        box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
+            0 0 24px #0084ff, inset 0 0 16px #0084ff;
     }
 }
 
 .name-wrapper > h2 {
     font-size: 48px;
+    font-family: "Marck Script";
+    margin-top: -30px;
+    word-spacing: -10px;
+    text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
+        0 0 80px #0084ff;
+    animation: lightup 5s 1;
+    border: 5px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
+        0 0 24px #0084ff, inset 0 0 16px #0084ff;
+    transform: rotate(-3deg);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.project-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 40px 15%;
+    border: 7px solid #243651;
+    border-radius: 40px;
+    padding: 80px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform, 0.2s;
+    gap: 60px;
+}
+
+.project-wrapper img {
+    max-width: 240px;
+    height: 135px;
+}
+
+.project-wrapper p {
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.project-wrapper:hover {
+    border-color: white;
+    transform: scale(1.01);
+}
+
+.reddit:hover {
+    box-shadow: 0 0 5px white, 0 0 15px red, 0 0 20px red, 0 0 24px red,
+        inset 0 0 16px red;
+}
+
+.shopping:hover {
+    box-shadow: 0 0 5px white, 0 0 15px #00ff99, 0 0 20px #00ff99,
+        0 0 24px #00ff99, inset 0 0 16px #00ff99;
+}
+
+.battleship:hover {
+    box-shadow: 0 0 5px white, 0 0 15px #ff00fb, 0 0 20px #ff00fb,
+        0 0 24px #ff00fb, inset 0 0 16px #ff00fb;
+}
+
+.todo:hover {
+    box-shadow: 0 0 5px white, 0 0 15px #ff8c00, 0 0 20px #ff8c00,
+        0 0 24px #ff8c00, inset 0 0 16px #ff8c00;
+}
+
+h3 {
+    font-size: 54px;
+    text-align: center;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    padding: 0 100px;
+}
+
+.section-header > span {
+    background-color: white;
+    height: 5px;
+    flex: 1;
+    box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
+        0 0 24px #0084ff, inset 0 0 16px #0084ff;
+}
+
+p {
+    font-size: 24px;
 }
