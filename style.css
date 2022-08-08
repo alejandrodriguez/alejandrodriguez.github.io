@@ -8,10 +8,60 @@
     box-sizing: border-box;
 }
 
+:root {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Palanquin", sans-serif;
     background: radial-gradient(#111a27, #06090e);
     color: white;
+}
+
+nav {
+    font-size: 22px;
+    position: fixed;
+    background-color: #203249;
+    width: 100%;
+    padding: 12px 32px;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: displaynav 1s 1 2s forwards;
+    z-index: 9999;
+}
+
+nav li {
+    transition: text-shadow 0.15s ease-out;
+}
+
+nav li:hover {
+    text-shadow: white 0 0 10px;
+}
+
+@keyframes displaynav {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+nav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav > ul > li:first-child {
+    flex: 1;
 }
 
 .name-wrapper {
@@ -117,10 +167,10 @@ a {
 .project-wrapper {
     display: flex;
     align-items: center;
-    margin: 40px 15%;
+    margin: 40px 0;
     border: 7px solid #243651;
     border-radius: 40px;
-    padding: 80px;
+    padding: 40px;
     transition: border-color 0.2s, box-shadow 0.2s, transform, 0.2s;
     gap: 60px;
 }
@@ -183,4 +233,83 @@ h3 {
 
 p {
     font-size: 24px;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+section > p {
+    margin: 40px 160px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input,
+textarea {
+    font: inherit;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 17px;
+    outline: none;
+    background-color: #203249;
+    color: white;
+    border: #203249 4px solid;
+    transition: border 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+textarea:focus {
+    border: #2b99ff 4px solid;
+    box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
+        0 0 24px #0084ff;
+}
+
+.section-content {
+    margin: 40px 15%;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+form button {
+    align-self: flex-end;
+}
+
+/* button {
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 7px;
+    background-color: yellow;
+} */
+
+button {
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    background-color: #203249;
+    border: 5px solid #203249;
+    transition: border-color 0.1s, box-shadow 0.1s, transform 0.1s;
+}
+
+button:hover {
+    border-color: white;
+    box-shadow: 0 0 5px white, 0 0 15px yellow, 0 0 20px yellow;
+    transform: scale(1.05);
 }
