@@ -31,3 +31,53 @@ function handleSubmit(e) {
 }
 
 submitBtn.addEventListener("click", e => handleSubmit(e));
+
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slider");
+
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -300px 0px"
+};
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("appear");
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+sliders.forEach(slider => {
+    appearOnScroll.observe(slider);
+});
+
+const projectLinks = document.querySelectorAll(".project-link");
+
+// projectLinks.forEach(projectWrapper => {
+//     projectWrapper.addEventListener("mouseover", () => {
+//         const children = projectWrapper.childNodes;
+//         children.forEach(child => {
+//             if (child.nodeName === "IMG") {
+//                 child.style.boxShadow =
+//                     "0 0 5px white, 0 0 15px var(--green), 0 0 20px var(--green), 0 0 24px var(--green), inset 0 0 16px var(--green)";
+//             }
+//         });
+//     });
+// });
+
+// projectLinks.forEach(projectWrapper => {
+//     projectWrapper.addEventListener("mouseout", () => {
+//         const children = projectWrapper.childNodes;
+//         children.forEach(child => {
+//             if (child.nodeName === "IMG") {
+//                 child.style.boxShadow = "none";
+//             }
+//         });
+//     });
+//});

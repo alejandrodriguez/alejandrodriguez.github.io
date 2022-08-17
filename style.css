@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+:root {
+    --lightblue: #0084ff;
+    --pink: #ff00fb;
+    --green: #00ff99;
+    --indigo: #20005f;
+    --lightoff: #243651;
+    --redditorange: #ff5700;
+}
 
 * {
     margin: 0;
@@ -13,21 +22,23 @@
 }
 
 body {
-    font-family: "Palanquin", sans-serif;
+    font-family: "Oswald", sans-serif;
     background: radial-gradient(#111a27, #06090e);
     color: white;
+    overflow-x: hidden;
 }
 
 nav {
     font-size: 22px;
     position: fixed;
-    background-color: #203249;
+    background-color: var(--indigo);
     min-width: 100%;
     padding: 12px 32px;
     opacity: 0;
     transform: translateY(-100%);
     animation: displaynav 1s 1 2s forwards;
     z-index: 9999;
+    text-transform: uppercase;
 }
 
 nav li {
@@ -80,15 +91,15 @@ nav > ul > li:first-child {
 
 @keyframes lightup {
     0% {
-        color: #243651;
+        color: var(--lightoff);
         text-shadow: none;
-        border-color: #243651;
+        border-color: var(--lightoff);
         box-shadow: none;
     }
     10% {
-        color: #243651;
+        color: var(--lightoff);
         text-shadow: none;
-        border-color: #243651;
+        border-color: var(--lightoff);
         box-shadow: none;
     }
     11% {
@@ -98,9 +109,9 @@ nav > ul > li:first-child {
         box-shadow: 0 0 5px white;
     }
     13% {
-        color: #243651;
+        color: var(--lightoff);
         text-shadow: none;
-        border-color: #243651;
+        border-color: var(--lightoff);
         box-shadow: none;
     }
     18% {
@@ -110,36 +121,41 @@ nav > ul > li:first-child {
         box-shadow: 0 0 5px white;
     }
     27% {
-        color: #243651;
+        color: var(--lightoff);
         text-shadow: none;
-        border-color: #243651;
+        border-color: var(--lightoff);
         box-shadow: none;
     }
     28% {
         color: white;
-        text-shadow: 0 0 10px white, 0 0 20px #0084ff;
+        text-shadow: 0 0 10px white, 0 0 20px var(--lightblue);
         border-color: white;
         box-shadow: 0 0 5px white;
     }
     29% {
-        text-shadow: 0 0 10px white, 0 0 20px #0084ff 0 0 40px #0084ff;
-        box-shadow: 0 0 5px white, 0 0 15px #0084ff;
+        text-shadow: 0 0 10px white,
+            0 0 20px var(--lightblue) 0 0 40px var(--lightblue);
+        box-shadow: 0 0 5px white, 0 0 15px var(--lightblue);
     }
     30% {
-        text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
-            0 0 80px #0084ff;
-        box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff;
+        text-shadow: 0 0 10px white, 0 0 20px var(--lightblue),
+            0 0 40px var(--lightblue), 0 0 80px var(--lightblue);
+        box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+            0 0 20px var(--lightblue);
     }
     31% {
-        text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
-            0 0 80px #009dff, 0 0 160px #0084ff;
-        box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff;
+        text-shadow: 0 0 10px white, 0 0 20px var(--lightblue),
+            0 0 40px var(--lightblue), 0 0 80px #009dff,
+            0 0 160px var(--lightblue);
+        box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+            0 0 20px var(--lightblue);
     }
     100% {
-        text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
-            0 0 80px #0084ff;
-        box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
-            0 0 24px #0084ff, inset 0 0 16px #0084ff;
+        text-shadow: 0 0 10px white, 0 0 20px var(--lightblue),
+            0 0 40px var(--lightblue), 0 0 80px var(--lightblue);
+        box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+            0 0 20px var(--lightblue), 0 0 24px var(--lightblue),
+            inset 0 0 16px var(--lightblue);
     }
 }
 
@@ -148,14 +164,15 @@ nav > ul > li:first-child {
     font-family: "Marck Script";
     margin-top: -30px;
     word-spacing: -10px;
-    text-shadow: 0 0 10px white, 0 0 20px #0084ff, 0 0 40px #0084ff,
-        0 0 80px #0084ff;
+    text-shadow: 0 0 10px white, 0 0 20px var(--lightblue),
+        0 0 40px var(--lightblue), 0 0 80px var(--lightblue);
     animation: lightup 5s 1;
     border: 5px solid white;
     border-radius: 20px;
     padding: 10px 20px;
-    box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
-        0 0 24px #0084ff, inset 0 0 16px #0084ff;
+    box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+        0 0 20px var(--lightblue), 0 0 24px var(--lightblue),
+        inset 0 0 16px var(--lightblue);
     transform: rotate(-3deg);
 }
 
@@ -167,50 +184,75 @@ a {
 .project-wrapper {
     display: flex;
     align-items: center;
-    margin: 40px 0;
-    border: 7px solid #243651;
-    border-radius: 40px;
-    padding: 40px;
-    transition: border-color 0.2s, box-shadow 0.2s, transform, 0.2s;
+    margin: 80px 60px;
     gap: 60px;
 }
 
 .project-wrapper img {
-    max-width: 240px;
-    height: 135px;
+    width: 800px;
+    height: 450px;
+    transition: box-shadow 0.2s;
 }
 
-.project-wrapper p {
+.reddit:hover {
+    box-shadow: 0 0 5px white, 0 0 15px var(--redditorange),
+        0 0 20px var(--redditorange), 0 0 24px var(--redditorange),
+        inset 0 0 16px var(--redditorange);
+}
+
+.shopping-cart:hover {
+    box-shadow: 0 0 5px white, 0 0 15px white, 0 0 20px white, 0 0 24px white,
+        inset 0 0 16px #00bee8;
+}
+
+.weather:hover {
+    box-shadow: 0 0 5px white, 0 0 15px #7300ff, 0 0 20px #7300ff,
+        0 0 24px #7300ff, inset 0 0 16px #7300ff;
+}
+
+.battleship:hover {
+    box-shadow: 0 0 5px white, 0 0 15px #00bee8, 0 0 20px #00bee8,
+        0 0 24px #00bee8, inset 0 0 16px #00bee8;
+}
+
+.fade-in {
+    opacity: 0;
+}
+
+.fade-in,
+.slider {
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.from-left {
+    transform: translateX(-50%);
+}
+
+.from-right {
+    transform: translateX(50%);
+}
+
+.from-left.appear,
+.from-right.appear {
+    transform: translateX(0);
+}
+
+.description {
     padding: 30px;
     border-radius: 20px;
 }
 
-.project-wrapper:hover {
-    border-color: white;
-    transform: scale(1.01);
+.description h4 {
+    font-size: 36px;
+    text-decoration: underline;
 }
 
-.reddit:hover {
-    box-shadow: 0 0 5px white, 0 0 15px red, 0 0 20px red, 0 0 24px red,
-        inset 0 0 16px red;
-}
-
-.shopping:hover {
-    box-shadow: 0 0 5px white, 0 0 15px #00ff99, 0 0 20px #00ff99,
-        0 0 24px #00ff99, inset 0 0 16px #00ff99;
-}
-
-.battleship:hover {
-    box-shadow: 0 0 5px white, 0 0 15px #ff00fb, 0 0 20px #ff00fb,
-        0 0 24px #ff00fb, inset 0 0 16px #ff00fb;
-}
-
-.todo:hover {
-    box-shadow: 0 0 5px white, 0 0 15px #ff8c00, 0 0 20px #ff8c00,
-        0 0 24px #ff8c00, inset 0 0 16px #ff8c00;
-}
-
-h3 {
+.section-header h3 {
+    text-transform: uppercase;
     font-size: 54px;
     text-align: center;
 }
@@ -227,8 +269,21 @@ h3 {
     background-color: white;
     height: 5px;
     flex: 1;
-    box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
-        0 0 24px #0084ff, inset 0 0 16px #0084ff;
+}
+
+#projects > .section-header > span {
+    box-shadow: 0 0 5px white, 0 0 15px var(--green), 0 0 20px var(--green),
+        0 0 24px var(--green), inset 0 0 16px var(--green);
+}
+
+#about > .section-header > span {
+    box-shadow: 0 0 5px white, 0 0 15px var(--pink), 0 0 20px var(--pink),
+        0 0 24px var(--pink), inset 0 0 16px var(--pink);
+}
+
+#contact > .section-header > span {
+    box-shadow: 0 0 5px white, 0 0 15px yellow, 0 0 20px yellow, 0 0 24px yellow,
+        inset 0 0 16px yellow;
 }
 
 p {
@@ -253,20 +308,20 @@ input,
 textarea {
     font: inherit;
     font-size: 18px;
-    padding: 10px;
+    padding: 16px;
     border-radius: 17px;
     outline: none;
-    background-color: #203249;
+    background-color: transparent;
     color: white;
-    border: #203249 4px solid;
+    border: #203249 5px solid;
     transition: border 0.15s, box-shadow 0.15s;
 }
 
 input:focus,
 textarea:focus {
-    border: #2b99ff 4px solid;
-    box-shadow: 0 0 5px white, 0 0 15px #0084ff, 0 0 20px #0084ff,
-        0 0 24px #0084ff;
+    border: #dadada 5px solid;
+    box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+        0 0 20px var(--lightblue), 0 0 24px var(--lightblue);
 }
 
 .section-content {
@@ -286,16 +341,8 @@ form button {
     align-self: flex-end;
 }
 
-/* button {
-    font: inherit;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px 30px;
-    border-radius: 7px;
-    background-color: yellow;
-} */
-
 button {
+    text-transform: uppercase;
     color: white;
     font: inherit;
     font-weight: bold;
@@ -303,15 +350,14 @@ button {
     padding: 5px 20px;
     border-radius: 10px;
     background-color: transparent;
-    background-color: #203249;
     border: 5px solid #203249;
-    transition: border-color 0.1s, box-shadow 0.1s, transform 0.1s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
     border-color: white;
-    box-shadow: 0 0 5px white, 0 0 15px yellow, 0 0 20px yellow;
-    transform: scale(1.05);
+    box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+        0 0 20px var(--lightblue);
 }
 
 #contact > .section-content {
@@ -325,13 +371,13 @@ button:hover {
     font-size: 24px;
     font-family: "Marck Script";
     word-spacing: -10px;
-    text-shadow: 0 0 10px white, 0 0 20px #00ff99, 0 0 40px #00ff99,
-        0 0 80px #00ff99;
+    text-shadow: 0 0 10px white, 0 0 20px var(--green), 0 0 40px var(--green),
+        0 0 80px var(--green);
     border: 5px solid white;
     border-radius: 20px;
     padding: 10px 20px;
-    box-shadow: 0 0 5px white, 0 0 15px #00ff99, 0 0 20px #00ff99,
-        0 0 24px #00ff99, inset 0 0 16px #00ff99;
+    box-shadow: 0 0 5px white, 0 0 15px var(--green), 0 0 20px var(--green),
+        0 0 24px var(--green), inset 0 0 16px var(--green);
     transform: rotate(-10deg);
     opacity: 0;
     transition: opacity 0.5s;
@@ -357,7 +403,35 @@ button:hover {
         gap: 10px;
     }
 
-    .project-wrapper {
-        flex-direction: column;
+    .section-header > h3 {
+        font-size: 36px;
+    }
+
+    nav {
+        font-size: 20px;
+        padding: 8px 18px;
+    }
+
+    nav > ul > li:first-child {
+        flex: 0 1 auto;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    #projects > .section-header > span {
+        box-shadow: 0 0 5px white, 0 0 15px var(--green), 0 0 20px var(--green),
+            inset 0 0 16px var(--green);
+    }
+
+    #about > .section-header > span {
+        box-shadow: 0 0 5px white, 0 0 15px var(--pink), 0 0 20px var(--pink),
+            inset 0 0 16px var(--pink);
+    }
+
+    #contact > .section-header > span {
+        box-shadow: 0 0 5px white, 0 0 15px yellow, 0 0 20px yellow,
+            inset 0 0 16px yellow;
     }
 }
