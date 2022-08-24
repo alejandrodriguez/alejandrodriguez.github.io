@@ -59,25 +59,29 @@ sliders.forEach(slider => {
 
 const projectLinks = document.querySelectorAll(".project-link");
 
-// projectLinks.forEach(projectWrapper => {
-//     projectWrapper.addEventListener("mouseover", () => {
-//         const children = projectWrapper.childNodes;
-//         children.forEach(child => {
-//             if (child.nodeName === "IMG") {
-//                 child.style.boxShadow =
-//                     "0 0 5px white, 0 0 15px var(--green), 0 0 20px var(--green), 0 0 24px var(--green), inset 0 0 16px var(--green)";
-//             }
-//         });
-//     });
-// });
-
-// projectLinks.forEach(projectWrapper => {
-//     projectWrapper.addEventListener("mouseout", () => {
-//         const children = projectWrapper.childNodes;
-//         children.forEach(child => {
-//             if (child.nodeName === "IMG") {
-//                 child.style.boxShadow = "none";
-//             }
-//         });
-//     });
-//});
+window.addEventListener("resize", e => {
+    if (
+        window.innerWidth < 1200 &&
+        document.querySelectorAll(".desktop").length > 0
+    ) {
+        const descriptions = document.querySelectorAll(".desktop");
+        descriptions.forEach(description => {
+            description.classList.remove("desktop");
+            description.classList.add("mobile");
+            description.parentElement.append(description);
+        });
+    } else if (
+        window.innerWidth > 1200 &&
+        document.querySelectorAll(".mobile").length > 0
+    ) {
+        const descriptions = document.querySelectorAll(".mobile");
+        descriptions.forEach(description => {
+            description.classList.remove("mobile");
+            description.classList.add("desktop");
+            description.parentElement.insertBefore(
+                description,
+                description.previousElementSibling
+            );
+        });
+    }
+});

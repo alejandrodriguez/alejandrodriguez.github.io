@@ -181,16 +181,37 @@ a {
     text-decoration: none;
 }
 
+#about > .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.me {
+    max-width: 350px;
+    border-radius: 50%;
+    border: solid var(--lightblue) 3px;
+    box-shadow: 0 0 3px white, 0 0 5px var(--lightblue),
+        0 0 10px var(--lightblue);
+}
+
 .project-wrapper {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 80px 60px;
+    margin: 80px 0;
     gap: 60px;
 }
 
-.project-wrapper img {
+.project-wrapper > a {
     width: 800px;
-    height: 450px;
+}
+
+.project-wrapper img {
+    max-width: 100%;
+    height: auto;
     transition: box-shadow 0.2s;
 }
 
@@ -221,7 +242,7 @@ a {
 
 .fade-in,
 .slider {
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.appear {
@@ -242,13 +263,18 @@ a {
 }
 
 .description {
-    padding: 30px;
     border-radius: 20px;
+    width: 600px;
+    flex-shrink: 2;
 }
 
 .description h4 {
-    font-size: 36px;
+    font-size: min(max(2.2vw, 28px), 36px);
     text-decoration: underline;
+}
+
+.description p {
+    font-size: min(max(1.6vw, 20px), 28px);
 }
 
 .section-header h3 {
@@ -267,7 +293,7 @@ a {
 
 .section-header > span {
     background-color: white;
-    height: 5px;
+    height: 3px;
     flex: 1;
 }
 
@@ -309,23 +335,23 @@ textarea {
     font: inherit;
     font-size: 18px;
     padding: 16px;
-    border-radius: 17px;
+    border-radius: 5px;
     outline: none;
     background-color: transparent;
     color: white;
-    border: #203249 5px solid;
+    border: #203249 4px solid;
     transition: border 0.15s, box-shadow 0.15s;
 }
 
 input:focus,
 textarea:focus {
-    border: #dadada 5px solid;
-    box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+    border: #dadada 4px solid;
+    box-shadow: 0 0 5px #dadada, 0 0 15px var(--lightblue),
         0 0 20px var(--lightblue), 0 0 24px var(--lightblue);
 }
 
 .section-content {
-    margin: 40px 15%;
+    margin: 40px 10%;
 }
 
 ::placeholder {
@@ -348,15 +374,15 @@ button {
     font-weight: bold;
     cursor: pointer;
     padding: 5px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: transparent;
-    border: 5px solid #203249;
+    border: 4px solid #203249;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
     border-color: white;
-    box-shadow: 0 0 5px white, 0 0 15px var(--lightblue),
+    box-shadow: 0 0 4px white, 0 0 15px var(--lightblue),
         0 0 20px var(--lightblue);
 }
 
@@ -381,6 +407,19 @@ button:hover {
     transform: rotate(-10deg);
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+@media (max-width: 1200px) {
+    .project-wrapper {
+        margin: 80px auto;
+        max-width: 800px;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .description {
+        width: 100%;
+    }
 }
 
 @media (max-width: 800px) {
@@ -412,6 +451,11 @@ button:hover {
         padding: 8px 18px;
     }
 
+    nav > ul {
+        justify-content: space-around;
+        gap: 10px;
+    }
+
     nav > ul > li:first-child {
         flex: 0 1 auto;
     }
@@ -433,5 +477,27 @@ button:hover {
     #contact > .section-header > span {
         box-shadow: 0 0 5px white, 0 0 15px yellow, 0 0 20px yellow,
             inset 0 0 16px yellow;
+    }
+}
+
+@media (max-width: 500px) {
+    .project-wrapper {
+        margin-top: 0;
+    }
+
+    .description h4 {
+        font-size: 18px;
+    }
+
+    .description p {
+        font-size: 16px;
+    }
+
+    #about > .section-content {
+        gap: 30px;
+    }
+
+    .me {
+        max-width: 200px;
     }
 }
