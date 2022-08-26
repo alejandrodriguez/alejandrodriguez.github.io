@@ -85,3 +85,19 @@ window.addEventListener("resize", e => {
         });
     }
 });
+
+document.querySelectorAll(".tooltip-wrapper > img").forEach(icon => {
+    icon.addEventListener("mouseover", e => {
+        e.target.previousElementSibling.style.opacity = "1";
+        e.target.previousElementSibling.style.transform =
+            "scale(1) translateX(-50%)";
+    });
+});
+
+document.querySelectorAll(".tooltip-wrapper > img").forEach(icon => {
+    icon.addEventListener("mouseout", e => {
+        e.target.previousElementSibling.style.opacity = "0";
+        e.target.previousElementSibling.style.transform =
+            "scale(0.95) translateX(-50%)";
+    });
+});

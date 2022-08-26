@@ -197,6 +197,55 @@ a {
         0 0 10px var(--lightblue);
 }
 
+h4 {
+    text-align: center;
+}
+
+#about h4 {
+    font-size: 36px;
+}
+
+.skills {
+    display: flex;
+    gap: 2vw;
+}
+
+.icon-wrapper {
+    position: relative;
+    max-width: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    color: black;
+    padding: 3px 10px;
+    font-size: 18px;
+    opacity: 0;
+    transform: scale(0.9) translateX(-50%);
+    transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+    bottom: 110%;
+    left: 50%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.icon {
+    max-width: 100%;
+}
+
+.icon-label {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    font-size: smaller;
+}
+
 .project-wrapper {
     display: flex;
     justify-content: center;
@@ -269,12 +318,19 @@ a {
 }
 
 .description h4 {
-    font-size: min(max(2.2vw, 28px), 36px);
+    font-size: min(max(2.2vw, 28px), 34px);
     text-decoration: underline;
 }
 
 .description p {
-    font-size: min(max(1.6vw, 20px), 28px);
+    font-size: min(max(1.6vw, 20px), 26px);
+    margin-bottom: 20px;
+}
+
+.description p:first-of-type {
+    font-style: italic;
+    font-size: 24px;
+    font-size: min(max(1.4vw, 18px), 24px);
 }
 
 .section-header h3 {
@@ -458,6 +514,21 @@ button:hover {
 
     nav > ul > li:first-child {
         flex: 0 1 auto;
+    }
+
+    .skills {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon {
+        width: 54px;
+    }
+
+    .icon-label {
+        visibility: visible;
+        position: static;
     }
 
     p {
