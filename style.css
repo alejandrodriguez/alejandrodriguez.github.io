@@ -270,7 +270,7 @@ h4 {
         inset 0 0 16px var(--redditorange);
 }
 
-.clothes-line:hover {
+.clothesline:hover {
     box-shadow: 0 0 5px white, 0 0 15px white, 0 0 20px white, 0 0 24px white,
         inset 0 0 16px #00bee8;
 }
