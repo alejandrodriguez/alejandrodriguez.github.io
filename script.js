@@ -86,7 +86,7 @@ window.addEventListener("resize", e => {
     }
 });
 
-document.querySelectorAll(".tooltip-wrapper > img").forEach(icon => {
+document.querySelectorAll(".icon-wrapper > img").forEach(icon => {
     icon.addEventListener("mouseover", e => {
         e.target.previousElementSibling.style.opacity = "1";
         e.target.previousElementSibling.style.transform =
@@ -94,7 +94,7 @@ document.querySelectorAll(".tooltip-wrapper > img").forEach(icon => {
     });
 });
 
-document.querySelectorAll(".tooltip-wrapper > img").forEach(icon => {
+document.querySelectorAll(".icon-wrapper > img").forEach(icon => {
     icon.addEventListener("mouseout", e => {
         e.target.previousElementSibling.style.opacity = "0";
         e.target.previousElementSibling.style.transform =
